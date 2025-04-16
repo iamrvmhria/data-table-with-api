@@ -37,7 +37,7 @@ function PostMethod() {
             setLoading(false);
         }
     };
-    console.log(post)
+
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
