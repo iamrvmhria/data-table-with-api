@@ -1,14 +1,17 @@
+import { Outlet } from "react-router-dom"
 import Nav from "./components/Nav"
-import Table from "./components/Table"
+import { Routes,Route } from "react-router-dom"
+import PostMethod from "./components/PostMethod"
+import Table from "./components/PostMethod"
 
 function App() {
 
   return (
     <>
-    <div className="container">
-    <Nav/>
-    <Table/>
-    </div>
+      <div className="container">
+        <Nav />
+        <Outlet />
+      </div>
     </>
   )
 }
