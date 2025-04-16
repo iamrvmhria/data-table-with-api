@@ -33,3 +33,4 @@ export const router = createBrowserRouter(createRoutesFromElements(
             <Route path='post-method' element={<PostMethod/>}/>
     </Route>
 ))
+
