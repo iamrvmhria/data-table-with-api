@@ -11,19 +11,17 @@ function App() {
     <>
       <div className="container">
         <Nav />
-        {/* <Outlet /> */}
+        <Outlet />
         {/* <Routes>
           <Route path='' element={<Home />} />
           <Route path='/get-method' element={<Table />} />
           <Route path='/post-method' element={<PostMethod />} />
         </Routes> */}
-        <Routes>
-          {/* <Route path='/' element={<App />}> */}
+        {/* <Routes>
             <Route index element={<Home />} />
             <Route path='get-method' element={<Table />} />
             <Route path='post-method' element={<PostMethod />} />
-          {/* </Route> */}
-        </Routes>
+        </Routes> */}
 
       </div>
     </>

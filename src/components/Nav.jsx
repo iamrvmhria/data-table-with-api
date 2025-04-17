@@ -21,7 +21,16 @@ export default function Nav() {
                 <NavLink className="nav-link" to='/get-method'>Get Method</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to= '/post-method'>Post Method</NavLink>
+                <NavLink className="nav-link" to='/post-method'>Post Method</NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to='/put-method'>Put Method</NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to='/patch-method'>Patch Method</NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to='/delete-method'>Delete Method</NavLink>
               </li>
               <li className="nav-item">
                 <a className="nav-link disabled" aria-disabled="true">Disabled</a>

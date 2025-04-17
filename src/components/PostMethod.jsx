@@ -8,35 +8,35 @@ function PostMethod() {
   const url = 'https://jsonplaceholder.typicode.com/posts';
 
   useEffect(() => {
-      sendPost();
-    }, []);
-    
-    const sendPost = async () => {
-        try {
-            const response = await fetch(url, {
-                method: 'POST',
-                body: JSON.stringify({
-                    title: 'first',
-                    body: 'name',
-                    userId: 1212,
-                }),
-                headers: {
-                    'Content-type': 'application/json; charset=UTF-8',
-                },
-            });
-            
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            
-            const result = await response.json();
-            setPost(result);
-        } catch (error) {
-            setError(error.message);
-        } finally {
-            setLoading(false);
-        }
-    };
+    sendPost();
+  }, []);
+
+  const sendPost = async () => {
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        body: JSON.stringify({
+          title: 'Name',
+          body: 'Ravindra',
+          userId: 1212,
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const result = await response.json();
+      setPost(result);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
 
   if (loading) return <p>Loading...</p>;

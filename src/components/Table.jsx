@@ -12,7 +12,7 @@ export default function Table() {
   useEffect(() => {
     fetchData();
   }, []);
-  
+
   const fetchData = async () => {
     try {
       const response = await fetch(url);
@@ -27,7 +27,7 @@ export default function Table() {
       setLoading(false);
     }
   };
-  
+
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
@@ -37,6 +37,7 @@ export default function Table() {
 
   return (
     <>
+      <h1 style={{ margin: '25px' }}>GET Method</h1>
       <table className="table table-bordered my-3">
         <thead>
           <tr>
@@ -46,8 +47,8 @@ export default function Table() {
             <th scope="col">Body</th>
           </tr>
         </thead>
-        {currentItems.map((item, index) => (
-          <tbody key={index}>
+        {currentItems.map((item) => (
+          <tbody key={item.id}>
             <tr>
               <th scope="row">{item.id}</th>
               <td>{item.userId}</td>
@@ -58,15 +59,15 @@ export default function Table() {
         ))}
       </table>
       <div className="d-flex justify-content-between my-4">
-        <button 
+        <button
           onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
           className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
           disabled={currentPage === 1}
         >
           Prev
         </button>
-        <button 
-          onClick={() => setCurrentPage(prev => 
+        <button
+          onClick={() => setCurrentPage(prev =>
             prev < Math.ceil(data.length / itemsPerPage) ? prev + 1 : prev)}
           className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
           disabled={currentPage === Math.ceil(data.length / itemsPerPage)}
