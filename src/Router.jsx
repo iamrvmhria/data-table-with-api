@@ -8,6 +8,20 @@ import PutMethod from './components/PutMethod'
 import PatchMethod from './components/PatchMEthod'
 import DeleteMethod from './components/DeleteMethod'
 
+
+
+export const router = createBrowserRouter(createRoutesFromElements(
+    <Route path='/' element={<App />}>
+            <Route path='' element={<Home/>}/>
+            <Route path='get-method' element={<Table/>}/>
+            <Route path='post-method' element={<PostMethod/>}/>
+            <Route path='put-method' element={<PutMethod/>}/>
+            <Route path='patch-method' element={<PatchMethod/>}/>
+            <Route path='delete-method' element={<DeleteMethod/>}/>
+    </Route>
+))
+
+// just for prectice
 // export const router = createBrowserRouter([
 //     {
 //         path: '/',
@@ -28,15 +42,3 @@ import DeleteMethod from './components/DeleteMethod'
 //         ]
 //     },
 // ]) 
-
-export const router = createBrowserRouter(createRoutesFromElements(
-    <Route path='/' element={<App />}>
-            <Route path='' element={<Home/>}/>
-            <Route path='get-method' element={<Table/>}/>
-            <Route path='post-method' element={<PostMethod/>}/>
-            <Route path='put-method' element={<PutMethod/>}/>
-            <Route path='patch-method' element={<PatchMethod/>}/>
-            <Route path='delete-method' element={<DeleteMethod/>}/>
-    </Route>
-))
-
